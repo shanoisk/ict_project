@@ -1,0 +1,12 @@
+import { Router } from 'express';
+import { listMovies, getMovie, createMovie, updateMovie, changeStatus, updateRating, deleteMovie, watchNext } from '../controllers/movieController.js';
+const router = Router();
+router.get('/watch-next', watchNext);
+router.get('/', listMovies);
+router.post('/', createMovie);
+router.get('/:id', getMovie);
+router.put('/:id', updateMovie);
+router.patch('/:id/status', changeStatus);
+router.patch('/:id/rating', updateRating);
+router.delete('/:id', deleteMovie);
+export default router;
